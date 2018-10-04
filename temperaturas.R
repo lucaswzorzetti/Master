@@ -44,12 +44,12 @@ temp
 line_temp <- function(fun.data, fun.y, title = " ", cor = "black") {
   fun.data$fun.y <- fun.data[, fun.y]
   ggplot(fun.data, aes(x = datetime, y = fun.y)) + 
-    geom_point(color = cor) + ylab("Temperature") +
+    geom_point(color = cor) + ylab("Temperature [°C]") +
     ggtitle(title) +
     scale_x_datetime(date_labels = "%d%B", date_breaks = "1 day") +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           plot.title = element_text(hjust = 0.5, vjust = 0, size = 20, face = "bold"),
-          axis.text.x = element_text(angle = 60, size = 10, face = "bold"),
+          axis.text.x = element_text(angle = 60, size = 10, face = "bold", vjust = 0.6),
           axis.text.y = element_text(angle = 90, size = 10, face = "bold"),
           axis.title.x = element_text(size = 12, face = "bold"),
           axis.title.y = element_text(size = 12, face = "bold"),
@@ -75,6 +75,4 @@ ggarrange(line_temp(temperatures, my_modules[1], paste("Módulo", my_modules[1],
           line_temp(temperatures, my_modules[5], paste("Módulo", my_modules[5], sep = " "),
                     cor = pallete[5]),
           nrow = 2, ncol = 3)
-
-
 
