@@ -23,7 +23,7 @@ library(tidyverse)
 library(ggpubr)
 library(lubridate)
 
-temperatures <- temperatures %>% mutate(date = temperatures$data, time = temperatures$tempo)
+temperatures <- temperatures %>% mutate(date = temperatures$data, time = temperatures$tempo) ## Just for sure
 temperatures <- unite(temperatures, "datetime",
                       c("data", "tempo"), sep = "") #Here you can use the lubridate package
 View(temperatures)
