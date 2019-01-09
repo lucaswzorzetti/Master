@@ -76,3 +76,4 @@ ggarrange(line_temp(temperatures, my_modules[1], paste("Módulo", my_modules[1],
                     cor = pallete[5]),
           nrow = 2, ncol = 3)
 
+##Adicionar uma escala que delimita apenas o tempo de experimento
